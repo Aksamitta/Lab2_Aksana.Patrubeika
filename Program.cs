@@ -120,14 +120,19 @@ namespace Lab2_Aksana.Patrubeika
             Console.WriteLine("_____________________");
         }
 
-        static void ouputOodNumbers (int[] array)
+        static void ouputOodNumbers(int[] array)   //Searching add numbers
         {
+            Random random = new Random();           //filling the array use rundom
             for (int i = 0; i < array.Length; i++)
             {
-                int j = i;
+                array[i] = random.Next(0, 100);
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                int j = array[i];
                 if (j % 2 != 0) Console.Write($" {j}");
             }
-            Console.WriteLine();            
+            Console.WriteLine();
         }
 
         static void reversOfNumbers (int[] array)
@@ -206,11 +211,8 @@ namespace Lab2_Aksana.Patrubeika
             array[0] = 1;
             array[1] = 1;
             for (int i = 2; i < array.Length; i++)
-            {
-                
-                array[i] = i;
-                array[i] = array[i-2] + array[i-1];          
-
+            {   
+                array[i] = array[i-2] + array[i-1];  
             }
             foreach (int item in array)
             {
