@@ -8,20 +8,12 @@ namespace Lab2_Aksana.Patrubeika
 {
     class Scanner
     {
-        public int urNumber { get; set; }
-        //public static implicit operator int(Scanner v)
-        //{
-        //    throw new NotImplementedException();
-        //}
-        public static int getNumber()
-        {
-            //Scanner number = new Scanner();
-            Scanner number = new Scanner();
-
-            number.urNumber = Int32.Parse(Console.ReadLine());
-            return number.urNumber;
-
-            //return number;
+        public int urNumber;
+       
+        public int getNumber()        {
+            
+            urNumber = Int32.Parse(Console.ReadLine());
+            return urNumber;
         }
     }
 
@@ -79,8 +71,9 @@ namespace Lab2_Aksana.Patrubeika
             //3.Чек числа в массиве
             Console.WriteLine("3.Checking number in the array: ");
             int[] arrayOfNumbers2 = { 2, 6, 8, 66, 200, 6, 9, 4 };
-            int number = Scanner.getNumber();
-            checkOfNumber(arrayOfNumbers2, number);
+            Scanner scanner = new Scanner();
+            scanner.getNumber();
+            checkOfNumber(arrayOfNumbers2, scanner.urNumber);
             Console.WriteLine("_____________________");
 
 
